@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --text-color: #333;
+    --light-gray: #f5f6fa;
+    --border-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    padding: 15px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 60px;
+}
+
+.logo {
+    position: static;
+    transform: none;
+}
+
+.logo img {
+    max-height: 60px;
+    display: block;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Formulário de Registro */
+.registro-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.registro-container h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.form-registro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Colunas do formulário */
+.form-coluna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-grupo label {
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.form-grupo input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-grupo input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.password-input {
+    position: relative;
+    width: 100%;
+}
+
+.password-input input {
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.btn-registro {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%;
+    margin: 0 auto 20px;
+}
+
+.btn-registro:hover {
+    background: var(--secondary-color);
+}
+
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    color: var(--secondary-color);
+}
+
+.mensagem {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.erro {
+    background-color: #fde8e8;
+    color: var(--error-color);
+    border: 1px solid #fbd5d5;
+}
+
+/* Botões e links em uma seção separada */
+.form-acoes {
+    flex-basis: 100%;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+    }
+
+    .nav {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav ul {
+        justify-content: center;
+    }
+
+    .form-registro {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .registro-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .form-grupo input {
+        font-size: 14px;
+    }
+
+    .form-acoes {
+        margin-top: 20px;
+    }
+} 
