@@ -116,8 +116,6 @@ try {
                 <!-- Últimas Encomendas -->
                 <div class="section">
                     <div class="section-header">
-                        <h2><i class="fas fa-history"></i> Últimas Encomendas</h2>
-                        <a href="minhas_encomendas/minhas_encomendas.php" class="view-all">Ver Todas</a>
                     </div>
                     <div class="table-container">
                         <table>
@@ -160,8 +158,6 @@ try {
                 <!-- Carrinho Atual -->
                 <div class="section">
                     <div class="section-header">
-                        <h2><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
-                        <a href="../carrinho/carrinho.php" class="view-all">Ver Carrinho</a>
                     </div>
                     <div class="table-container">
                         <table>

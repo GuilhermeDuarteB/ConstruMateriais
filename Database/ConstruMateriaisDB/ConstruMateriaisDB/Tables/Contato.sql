@@ -1,0 +1,8 @@
+﻿CREATE TABLE  [dbo].Contatos (
+    ContatoID INT IDENTITY(1,1) PRIMARY KEY,
+    Nome NVARCHAR(100) NOT NULL,
+    Email NVARCHAR(100) NOT NULL,
+    Assunto NVARCHAR(200) NOT NULL,
+    Mensagem NTEXT NOT NULL,
+    DataEnvio DATETIME DEFAULT GETDATE()
+);

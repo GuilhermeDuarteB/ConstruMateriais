@@ -1,0 +1,17 @@
+﻿** Destaques
+     Tabelas que serão recriadas com os dados migrados
+       Nenhum
+     Índices clusterizados que serão removidos
+       Nenhum
+     Índices clusterizados que serão criados
+       Nenhum
+     Possíveis problemas de dados
+       Nenhum
+
+** Ações do usuário
+     Criar
+       [dbo].[ItensVenda] (Tabela)
+       Chave Estrangeira: restrição sem nome em [dbo].[ItensVenda] (Chave Estrangeira)
+       Chave Estrangeira: restrição sem nome em [dbo].[ItensVenda] (Chave Estrangeira)
+
+** Ações de suporte

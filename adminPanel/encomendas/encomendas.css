@@ -49,6 +49,34 @@
 .btn-sm {
     padding: 0.25rem 0.5rem;
     margin: 0 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-sm i {
+    font-size: 0.9em;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 .modal-body {
@@ -68,6 +96,26 @@
     margin-bottom: 10px;
 }
 
+.produtos-lista {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.produtos-lista:hover {
+    white-space: normal;
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* Ajuste para melhor visualização em telas menores */
+@media (max-width: 992px) {
+    .produtos-lista {
+        max-width: 200px;
+    }
+}
+
 @media (max-width: 768px) {
     .filters-section form {
         flex-direction: column;
@@ -78,4 +126,39 @@
         width: 100%;
         margin-bottom: 10px;
     }
+}
+
+.detalhes-venda {
+    padding: 15px;
+}
+
+.detalhes-venda h6 {
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.info-cliente, .info-venda {
+    margin-bottom: 20px;
+}
+
+.info-cliente p, .info-venda p {
+    margin-bottom: 8px;
+}
+
+.produtos-detalhes {
+    margin-top: 20px;
+}
+
+.produtos-detalhes table {
+    margin-top: 10px;
+}
+
+.modal-lg {
+    max-width: 800px;
+}
+
+.text-end {
+    text-align: right;
 } 

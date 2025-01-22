@@ -97,7 +97,7 @@ try {
 
                                     <div class="payment-option">
                                         <input type="radio" id="multibanco" name="pagamento" value="multibanco">
-                                        <label for="multibanco"><i class="fas fa-university"></i> Multibanco</label>
+                                        <label for="multibanco"><i class="fa-brands fa-paypal"></i> Paypal</label>
                                     </div>
                                     <div class="payment-details" id="multibanco-details">
                                         <div class="form-group">

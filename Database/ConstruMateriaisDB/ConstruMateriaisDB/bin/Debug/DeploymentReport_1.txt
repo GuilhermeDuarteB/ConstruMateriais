@@ -1,0 +1,21 @@
+﻿** Destaques
+     Tabelas que serão recriadas com os dados migrados
+       Nenhum
+     Índices clusterizados que serão removidos
+       Nenhum
+     Índices clusterizados que serão criados
+       Nenhum
+     Possíveis problemas de dados
+       A coluna [dbo].[Produtos].[Foto] na tabela [dbo].[Produtos] deve ser adicionada, mas a coluna não possui valor padrão e
+         não permite valores NULL. Se a tabela contiver dados, o script ALTER não funcionará. Para evitar o problema, você deve:
+         adicionar um valor padrão para a coluna, marcá-la para permitir valores NULL ou habilitar a geração de padrões
+         inteligentes como uma opção de implantação.
+
+** Ações do usuário
+     Alterar
+       [dbo].[Produtos] (Tabela)
+
+** Ações de suporte
+
+A coluna [dbo].[Produtos].[Foto] na tabela [dbo].[Produtos] deve ser adicionada, mas a coluna não possui valor padrão e não permite valores NULL. Se a tabela contiver dados, o script ALTER não funcionará. Para evitar o problema, você deve: adicionar um valor padrão para a coluna, marcá-la para permitir valores NULL ou habilitar a geração de padrões inteligentes como uma opção de implantação.
+

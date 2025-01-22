@@ -120,6 +120,10 @@ try {
                             <i class="fas fa-user"></i>
                             <span>Minha Conta</span>
                         </a>
+                        <a href="../carrinho/carrinho.php" class="btn-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Carrinho</span>
+                    </a>
                     <?php else: ?>
                         <a href="../registo/index.php" class="btn-user">
                             <i class="fas fa-sign-in-alt"></i>
@@ -130,10 +134,6 @@ try {
                             <span>Entrar</span>
                         </a>
                     <?php endif; ?>
-                    <a href="../carrinho.php" class="btn-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Carrinho</span>
-                    </a>
                 </div>
             </div>
         </div>

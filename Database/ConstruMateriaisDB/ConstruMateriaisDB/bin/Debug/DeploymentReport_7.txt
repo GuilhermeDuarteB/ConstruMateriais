@@ -1,0 +1,26 @@
+﻿** Destaques
+     Tabelas que serão recriadas com os dados migrados
+       [dbo].[Clientes]
+     Índices clusterizados que serão removidos
+       Nenhum
+     Índices clusterizados que serão criados
+       Nenhum
+     Possíveis problemas de dados
+       Nenhum
+
+** Ações do usuário
+     Remover
+       restrição sem nome em [dbo].[Vendas] (Chave Estrangeira)
+       restrição sem nome em [dbo].[Carrinho] (Chave Estrangeira)
+     Recriar tabela
+       [dbo].[Clientes] (Tabela)
+     Criar
+       [dbo].[EnderecosCliente] (Tabela)
+       Restrição Padrão: restrição sem nome em [dbo].[EnderecosCliente] (Restrição Padrão)
+       Restrição Padrão: restrição sem nome em [dbo].[EnderecosCliente] (Restrição Padrão)
+       Chave Estrangeira: restrição sem nome em [dbo].[EnderecosCliente] (Chave Estrangeira)
+
+** Ações de suporte
+     Criar
+       Chave Estrangeira: restrição sem nome em [dbo].[Vendas] (Chave Estrangeira)
+       Chave Estrangeira: restrição sem nome em [dbo].[Carrinho] (Chave Estrangeira)

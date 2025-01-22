@@ -27,6 +27,7 @@ $encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Minhas Encomendas - Construmateriais</title>
     <link rel="shortcut icon" type="x-icon" href="../../logo.png"> 
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="admin-container">
@@ -56,6 +57,7 @@ $encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <th>Data</th>
                             <th>Valor Total</th>
                             <th>Status</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,6 +71,11 @@ $encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <?php echo $encomenda['Status']; ?>
                                     </span>
                                 </td>
+                                <td>
+                                    <button onclick="reenviarEncomenda(<?php echo $encomenda['VendaID']; ?>)" class="btn-reenviar">
+                                        <i class="fas fa-sync-alt"></i> Reenviar
+                                    </button>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -78,5 +85,30 @@ $encomendas = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <script src="https://kit.fontawesome.com/your-code.js"></script>
+    <script>
+    function reenviarEncomenda(vendaId) {
+        if (confirm('Deseja reenviar esta encomenda? Os itens serão adicionados ao seu carrinho.')) {
+            fetch('reenviar_encomenda.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `vendaId=${vendaId}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = '../../carrinho/finalizar_compra.php';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Ocorreu um erro ao reenviar a encomenda.');
+            });
+        }
+    }
+    </script>
 </body>
 </html> 

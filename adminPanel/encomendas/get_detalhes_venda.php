@@ -2,43 +2,44 @@
 session_start();
 include '../../connection.php';
 
-if (isset($_GET['id'])) {
-    try {
-        $vendaId = intval($_GET['id']);
-        
-        // Buscar detalhes da venda e cliente
-        $query = "SELECT v.*, c.* 
-                  FROM Vendas v 
-                  LEFT JOIN Clientes c ON v.ClienteID = c.IdCliente 
-                  WHERE v.VendaID = ?";
-        $stmt = $conn->prepare($query);
-        $stmt->execute([$vendaId]);
-        $venda = $stmt->fetch(PDO::FETCH_ASSOC);
-        
-        if ($venda) {
-            $response = [
-                'cliente' => [
-                    'nome' => trim($venda['Nome']),
-                    'email' => trim($venda['Email']),
-                    'telefone' => trim($venda['Telefone']),
-                    'morada' => trim($venda['Morada'])
-                ],
-                'venda' => [
-                    'data' => date('d/m/Y H:i', strtotime($venda['DataVenda'])),
-                    'valor_total' => number_format($venda['ValorTotal'], 2, ',', '.'),
-                    'forma_pagamento' => $venda['FormaPagamento'],
-                    'status' => $venda['Status']
-                ]
-            ];
-            
-            header('Content-Type: application/json');
-            echo json_encode($response);
-        } else {
-            http_response_code(404);
-            echo json_encode(['error' => 'Venda não encontrada']);
-        }
-    } catch(PDOException $e) {
-        http_response_code(500);
-        echo json_encode(['error' => $e->getMessage()]);
-    }
-} 
+if (!isset($_GET['vendaId'])) {
+    echo json_encode(['error' => 'ID da venda não fornecido']);
+    exit;
+}
+
+$vendaId = (int)$_GET['vendaId'];
+
+try {
+    // Buscar informações da venda
+    $query = "SELECT v.VendaID, v.DataVenda, v.ValorTotal, v.FormaPagamento, v.Status,
+                     c.Nome as NomeCliente, c.Email, c.Telefone, c.Morada
+              FROM Vendas v
+              JOIN Clientes c ON v.ClienteID = c.IdCliente
+              WHERE v.VendaID = ?";
+    
+    $stmt = $conn->prepare($query);
+    $stmt->execute([$vendaId]);
+    $venda = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Buscar itens da venda
+    $queryItens = "SELECT p.Nome, iv.Quantidade, iv.PrecoUnitario,
+                          (iv.Quantidade * iv.PrecoUnitario) as Subtotal
+                   FROM ItensVenda iv
+                   JOIN Produtos p ON iv.ProdutoID = p.ProdutoID
+                   WHERE iv.VendaID = ?";
+    
+    $stmt = $conn->prepare($queryItens);
+    $stmt->execute([$vendaId]);
+    $itens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $resultado = [
+        'venda' => $venda,
+        'itens' => $itens
+    ];
+
+    echo json_encode($resultado);
+
+} catch(PDOException $e) {
+    echo json_encode(['error' => $e->getMessage()]);
+}
+?> 
