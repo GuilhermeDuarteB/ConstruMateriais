@@ -1,0 +1,34 @@
+﻿** Destaques
+     Tabelas que serão recriadas com os dados migrados
+       [dbo].[ProdutoCaracteristicas]
+     Índices clusterizados que serão removidos
+       Nenhum
+     Índices clusterizados que serão criados
+       Nenhum
+     Possíveis problemas de dados
+       Ignorando a coluna [dbo].[ProdutoCaracteristicas].[Valor]; poderá ocorrer perda de dados.
+
+** Ações do usuário
+     Remover
+       restrição sem nome em [dbo].[ProdutoCaracteristicas] (Restrição Padrão)
+       restrição sem nome em [dbo].[ProdutoCaracteristicas] (Chave Estrangeira)
+       restrição sem nome em [dbo].[ProdutoCaracteristicas] (Chave Estrangeira)
+     Alterar
+       [dbo].[Caracteristicas] (Tabela)
+       [dbo].[Produtos] (Tabela)
+     Recriar tabela
+       [dbo].[ProdutoCaracteristicas] (Tabela)
+     Criar
+       [dbo].[CaracteristicaValores] (Tabela)
+       Restrição Padrão: restrição sem nome em [dbo].[CaracteristicaValores] (Restrição Padrão)
+       Chave Estrangeira: restrição sem nome em [dbo].[ProdutoCaracteristicas] (Chave Estrangeira)
+       Chave Estrangeira: restrição sem nome em [dbo].[CaracteristicaValores] (Chave Estrangeira)
+
+** Ações de suporte
+     Criar
+       Chave Estrangeira: restrição sem nome em [dbo].[ProdutoCaracteristicas] (Chave Estrangeira)
+       Chave Estrangeira: restrição sem nome em [dbo].[ProdutoCaracteristicas] (Chave Estrangeira)
+
+A coluna Nome na tabela [dbo].[Caracteristicas] deve ser alterada de NULL para NOT NULL. Se a tabela contiver dados, o script ALTER talvez não funcione. Para evitar o problema, você deve adicionar valores a essa coluna para todas as linhas, marcá-la para permitir valores NULL ou habilitar a geração de padrões inteligentes como uma opção de implantação.
+Ignorando a coluna [dbo].[ProdutoCaracteristicas].[Valor]; poderá ocorrer perda de dados.
+

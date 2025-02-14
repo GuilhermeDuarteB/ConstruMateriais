@@ -1,8 +1,8 @@
-﻿CREATE TABLE [dbo].Produtos (
+﻿CREATE TABLE [dbo].[Produtos] (
     ProdutoID INT PRIMARY KEY IDENTITY(1,1),
     CategoriaID INT FOREIGN KEY REFERENCES Categorias(CategoriaID),
-    Nome VARCHAR(100) NOT NULL,
-    Descricao VARCHAR(500),
+    Nome NVARCHAR(100) NOT NULL,
+    Descricao NVARCHAR(500),
     PrecoUnitario DECIMAL(10,2) NOT NULL,
     QuantidadeEstoque INT NOT NULL,
     DataCriacao DATETIME DEFAULT GETDATE(),

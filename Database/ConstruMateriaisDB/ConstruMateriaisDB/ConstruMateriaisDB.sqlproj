@@ -67,6 +67,9 @@
     <Build Include="Tables\Contato.sql" />
     <Build Include="Tables\itensVenda.sql" />
     <Build Include="Tables\EnderecoesCliente.sql" />
+    <Build Include="Tables\Caracteristicas.sql" />
+    <Build Include="Tables\ProdutoCaracteristicas.sql" />
+    <Build Include="Tables\CaracteristicaValores.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ConstruMateriaisDB_1.publish.xml" />
